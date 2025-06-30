@@ -32,42 +32,62 @@
     <div class="card shadow card-main">
       <div class="card-header text-center">
         <h4 class="mb-0">Modelo 5: Microlearning</h4>
-        <small class="text-muted">Carga Horária Total = (Conteúdo min + Atividade min) ×
-          Fator de Revisão ÷ 60</small>
+        <small class="text-muted">Carga Horária Total = (Duração dos Conteúdos + Tempo das Atividades) × Fator de
+          Revisão</small>
       </div>
       <div class="card-body">
         <div class="card border-secondary mb-4">
           <div class="card-body p-3">
             <p class="mb-1 small text-muted">
-              <strong>Indicado para:</strong> pílulas de aprendizagem curtas
-              em que o aluno terá um tempo adicional de revisão reflexiva após
-              consumir o conteúdo e realizar a atividade.
+              <strong>Indicado para:</strong> cursos curtos e modulares que utilizam pequenas unidades de aprendizado
+              para facilitar
+              a assimilação do conteúdo. Esse modelo é ideal para formações de curta duração, treinamentos rápidos e
+              cursos que exigem revisão constante, onde o aprendizado acontece de forma fragmentada ao longo do
+              tempo.
             </p>
             <p class="mb-0 small text-muted">
               <strong>Fórmula:</strong>
-              <code>CH = (Conteúdo min + Atividade min) × Fator ÷
-                  60</code>
+              <code>CH = (Duração dos Conteúdos + Tempo das Atividades) × Fator de Revisão</code>
             </p>
+          </div>
+        </div>
+
+        <div class="card border-info mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Como aplicar este modelo:</h5>
+          </div>
+          <div class="card-body">
+            <ol class="small text-muted mb-0">
+              <li>Determine a duração total dos conteúdos.</li>
+              <li>Calcule o tempo das atividades curtas.</li>
+              <li>Multiplique o tempo total pelo Fator de Revisão.</li>
+            </ol>
           </div>
         </div>
 
         <form id="calc-form">
           <div class="row g-3 mb-3">
             <div class="col-md-6">
+
               <label for="conteudo" class="form-label">Duração total dos conteúdos
                 <small>(em minutos)</small></label>
-              <input type="number" step="0.1" min="0" class="form-control" id="conteudo" placeholder="Ex.: 50"
+              <input type="number" step="0.1" min="0" class="form-control" id="conteudo" placeholder="Minutos"
                 required />
             </div>
             <div class="col-md-6">
               <label for="atividade" class="form-label">Tempo total das atividades <small>(em minutos)</small></label>
-              <input type="number" step="0.1" min="0" class="form-control" id="atividade" placeholder="Ex.: 20"
+              <input type="number" step="0.1" min="0" class="form-control" id="atividade" placeholder="Minutos"
                 required />
             </div>
           </div>
 
           <div class="mb-4">
-            <label for="fator" class="form-label">Fator de Revisão</label>
+            <p class="mb-1 small text-muted">
+              Dado que no microlearning os conteúdos são curtos, mas frequentemente revistos, é aplicado um fator de
+              revisão, que pode variar entre 1.1 e 1.5, dependendo da necessidade de reforço e absorção do
+              conhecimento.
+            </p>
+            <label for="fator" class="form-label">Fator de revisão</label>
             <select class="form-select" id="fator" required>
               <option value="1.1">1.1 (revisão leve)</option>
               <option value="1.2">1.2</option>
@@ -85,11 +105,15 @@
         <div id="resultado" class="alert alert-info mt-4 d-none" role="alert"></div>
 
         <div class="card border-warning mt-4">
+          <div class="card-header">
+            <h5 class="mb-0">Limitações:</h5>
+          </div>
           <div class="card-body p-3">
             <p class="mb-0 small text-warning">
-              <strong>Limitações:</strong> não inclui tempo de transição entre
-              objetos nem avaliações finais; ajuste o fator se seus alunos
-              precisarem de mais ou menos revisão do que a média.
+              Este modelo não é adequado para cursos extensivos ou de alta complexidade, pois o
+              microlearning foca na absorção rápida de pequenos conteúdos. Para cursos que exigem reflexão
+              profunda e aplicação prática, recomenda-se combiná-lo com modelos que consideram o esforço
+              cognitivo e a interação do aluno.
             </p>
           </div>
         </div>

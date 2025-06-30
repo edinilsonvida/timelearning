@@ -12,7 +12,7 @@
     }
 
     .card-main {
-      max-width: 720px;
+      max-width: 700px;
       margin: 2rem auto;
     }
 
@@ -32,68 +32,130 @@
     <div class="card shadow card-main">
       <div class="card-header text-center">
         <h4 class="mb-0">Modelo 6: Múltiplos Fatores de Aprendizagem</h4>
-        <small class="text-muted">CH = (Exposição × Peso Método) + (Interação × Peso Cognitivo) + (Aplicação ×
-          Peso Aprendizagem)</small>
+        <small class="text-muted">Carga Horária Total = (Exposição ao Conteúdo × Peso da Exposição) + (Métodologia de
+          Aprendizagem × Peso da Metodologia) +(Interação × Peso da Interação) + (Carga Cognitiva × Peso da Cognição) +
+          (Aplicação Prática × Peso de Aplicação)</small>
       </div>
       <div class="card-body">
         <div class="card border-secondary mb-4">
           <div class="card-body p-3">
-            <p class="mb-1 small text-muted"><strong>Indicado para:</strong> cursos que equilibram apresentação de
-              conteúdo, atividades interativas e aplicação prática, atribuindo pesos diferentes a cada aspecto de acordo
-              com sua complexidade.</p>
-            <p class="mb-0 small text-muted"><strong>Fórmula:</strong>
-              <code>CH = (Tempo Exposição × Peso Método) + (Interação × Peso Cognitivo) + (Aplicação Prática × Peso Aprendizagem)</code>
+            <p class="mb-1 small text-muted">
+              <strong>Indicado para:</strong> cursos que combinam diferentes estratégias de ensino, exigindo variação
+              entre exposição ao conteúdo, interação, esforço cognitivo e aplicação prática. Esse modelo é ideal para
+              formações que
+              misturam aulas expositivas, atividades interativas, mentorias e projetos aplicados, refletindo melhor o
+              tempo real necessário para a aprendizagem.
             </p>
+            <p class="mb-0 small text-muted">
+              <strong>Fórmula:</strong>
+              <code>CH = (Exposição ao Conteúdo × Peso da Exposição) + (Métodologia de Aprendizagem × Peso da Metodologia) +(Interação × Peso da Interação) + (Carga Cognitiva × Peso da Cognição) + (Aplicação Prática × Peso de Aplicação)</code>
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-info mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Como aplicar este modelo:</h5>
+          </div>
+          <div class="card-body">
+            <ol class="small text-muted mb-0">
+              <li>Liste as horas dedicadas a cada tipo de fator considerado (listado abaixo).</li>
+              <li>Multiplique as horas de cada atividade pelo seu peso correspondente.</li>
+              <li>Some os resultados para obter a carga horária final.</li>
+            </ol>
+            <p class="small text-muted mb-0">Tipos de fatores considerados:</p>
+            <ol class="small text-muted mb-0">
+              <li>Tempo de exposição ao conteúdo (aulas, vídeos, leituras).</li>
+              <li>Metodologia e variedade de sistemas de aprendizagem (presencial, híbrido, EAD).</li>
+              <li>Interação e engajamento (fóruns, debates, tutorias, atividades em grupo).</li>
+              <li>Carga cognitiva (nível de complexidade do conteúdo).</li>
+              <li>Aplicação prática (projetos, estudos de caso, atividades práticas).</li>
+            </ol>
           </div>
         </div>
 
         <form id="calc-form">
           <div class="row g-3 mb-3">
-            <div class="col-md-4">
-              <label for="exposicao" class="form-label">Tempo de Exposição (h)</label>
-              <input type="number" step="0.1" min="0" class="form-control" id="exposicao" placeholder="Ex.: 20"
+            <div class="col-md-6">
+              <label for="tempoExposicao" class="form-label">Exposição ao conteúdo <small>(em horas)</small></label>
+              <input type="number" step="0.1" min="0" class="form-control" id="tempoExposicao" placeholder="Horas"
                 required />
             </div>
-            <div class="col-md-4">
-              <label for="interacao" class="form-label">Tempo de Interação (h)</label>
-              <input type="number" step="0.1" min="0" class="form-control" id="interacao" placeholder="Ex.: 10"
-                required />
-            </div>
-            <div class="col-md-4">
-              <label for="aplicacao" class="form-label">Aplicação Prática (h)</label>
-              <input type="number" step="0.1" min="0" class="form-control" id="aplicacao" placeholder="Ex.: 15"
-                required />
+            <div class="col-md-6">
+              <label for="pesoTempoExposicao" class="form-label">Peso</label>
+              <select class="form-select" id="pesoTempoExposicao" required>
+                <option value="1">1</option>
+              </select>
             </div>
           </div>
+
           <div class="row g-3 mb-3">
-            <div class="col-md-4">
-              <label for="pesoMetodo" class="form-label">Peso do Método</label>
-              <select class="form-select" id="pesoMetodo" required>
+            <div class="col-md-6">
+              <label for="tempoMetodologia" class="form-label">Metodologia de aprendizagem <small>(em
+                  horas)</small></label>
+              <input type="number" step="0.1" min="0" class="form-control" id="tempoMetodologia" placeholder="Horas"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="pesoMetodologia" class="form-label">Peso</label>
+              <select class="form-select" id="pesoMetodologia" required>
                 <option value="1">1</option>
-                <option value="1.5" selected>1.5</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label for="tempoInteracao" class="form-label">Interação e engajamento <small>(em horas)</small></label>
+              <input type="number" step="0.1" min="0" class="form-control" id="tempoInteracao" placeholder="Horas"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="pesoInteracao" class="form-label">Peso</label>
+              <select class="form-select" id="pesoInteracao" required>
+                <option value="1.5">1.5</option>
                 <option value="2">2</option>
                 <option value="2.5">2.5</option>
                 <option value="3">3</option>
               </select>
             </div>
-            <div class="col-md-4">
-              <label for="pesoCognitivo" class="form-label">Peso Cognitivo</label>
-              <select class="form-select" id="pesoCognitivo" required>
-                <option value="1">1</option>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label for="tempoCargaCognitiva" class="form-label">Carga cognitiva <small>(em horas)</small></label>
+              <input type="number" step="0.1" min="0" class="form-control" id="tempoCargaCognitiva" placeholder="Horas"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="pesoCargaCognitiva" class="form-label">Peso</label>
+              <select class="form-select" id="pesoCargaCognitiva" required>
                 <option value="1.5">1.5</option>
-                <option value="2" selected>2</option>
+                <option value="2">2</option>
                 <option value="2.5">2.5</option>
                 <option value="3">3</option>
+                <option value="3.5">3.5</option>
               </select>
             </div>
-            <div class="col-md-4">
-              <label for="pesoAplicacao" class="form-label">Peso de Aprendizagem</label>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label for="tempoAplicacao" class="form-label">Aplicação prática <small>(em horas)</small></label>
+              <input type="number" step="0.1" min="0" class="form-control" id="tempoAplicacao" placeholder="Horas"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="pesoAplicacao" class="form-label">Peso</label>
               <select class="form-select" id="pesoAplicacao" required>
-                <option value="1">1</option>
-                <option value="1.5">1.5</option>
                 <option value="2">2</option>
-                <option value="2.5" selected>2.5</option>
+                <option value="2.5">2.5</option>
                 <option value="3">3</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4</option>
               </select>
             </div>
           </div>
@@ -104,9 +166,16 @@
         <div id="resultado" class="alert alert-info mt-4 d-none" role="alert"></div>
 
         <div class="card border-warning mt-4">
+          <div class="card-header">
+            <h5 class="mb-0">Limitações:</h5>
+          </div>
           <div class="card-body p-3">
-            <p class="mb-0 small text-warning"><strong>Limitações:</strong> exige estimativas realistas de tempo e
-              pesos; resultados podem variar se a complexidade cognitiva ou prática for superestimada.</p>
+            <p class="mb-0 small text-warning">
+              Esse modelo requer um planejamento detalhado, pois os pesos aplicados devem
+              refletir a realidade do curso e o nível de dedicação esperado do aluno. Além disso, cursos que são
+              puramente expositivos ou com pouca interação podem não se beneficiar desse modelo, pois o
+              tempo adicional de engajamento e prática não seria significativo.
+            </p>
           </div>
         </div>
       </div>
@@ -117,15 +186,29 @@
   <script>
     document.getElementById("calc-form").addEventListener("submit", function (e) {
       e.preventDefault();
-      const exposicao = parseFloat(document.getElementById("exposicao").value) || 0;
-      const interacao = parseFloat(document.getElementById("interacao").value) || 0;
-      const aplicacao = parseFloat(document.getElementById("aplicacao").value) || 0;
 
-      const pesoMetodo = parseFloat(document.getElementById("pesoMetodo").value);
-      const pesoCognitivo = parseFloat(document.getElementById("pesoCognitivo").value);
+      const tempoExposicao = parseFloat(document.getElementById("tempoExposicao").value) || 0;
+      const pesoTempoExposicao = parseFloat(document.getElementById("pesoTempoExposicao").value);
+
+      const tempoMetodologia = parseFloat(document.getElementById("tempoMetodologia").value) || 0;
+      const pesoMetodologia = parseFloat(document.getElementById("pesoMetodologia").value);
+
+      const tempoInteracao = parseFloat(document.getElementById("tempoInteracao").value) || 0;
+      const pesoInteracao = parseFloat(document.getElementById("pesoInteracao").value);
+
+      const tempoCargaCognitiva = parseFloat(document.getElementById("tempoCargaCognitiva").value) || 0;
+      const pesoCargaCognitiva = parseFloat(document.getElementById("pesoCargaCognitiva").value);
+
+      const tempoAplicacao = parseFloat(document.getElementById("tempoAplicacao").value) || 0;
       const pesoAplicacao = parseFloat(document.getElementById("pesoAplicacao").value);
 
-      const total = exposicao * pesoMetodo + interacao * pesoCognitivo + aplicacao * pesoAplicacao;
+      // Nova fórmula de cálculo
+      const total =
+        (tempoExposicao * pesoTempoExposicao) +
+        (tempoMetodologia * pesoMetodologia) +
+        (tempoInteracao * pesoInteracao) +
+        (tempoCargaCognitiva * pesoCargaCognitiva) +
+        (tempoAplicacao * pesoAplicacao);
 
       const resultadoDiv = document.getElementById("resultado");
       resultadoDiv.classList.remove("d-none");

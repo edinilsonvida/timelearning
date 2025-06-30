@@ -16,7 +16,6 @@
       margin: 2rem auto;
     }
   </style>
-
 </head>
 
 <body>
@@ -29,37 +28,57 @@
     <div class="card shadow card-main">
       <div class="card-header text-center">
         <h4 class="mb-0">Modelo 1: Tempo de Exposição ao Conteúdo</h4>
-        <small
-          class="text-muted">Carga Horária Total = Aulas + Leituras + Atividades</small>
+        <small class="text-muted">Carga Horária Total = Aulas + Leituras + Atividades</small>
       </div>
       <div class="card-body">
         <div class="card border-secondary mb-4">
           <div class="card-body p-3">
             <p class="mb-1 small text-muted">
-              <strong>Indicado para:</strong> disciplinas ou cursos em que a
-              carga horária é diretamente proporcional ao tempo de exposição
-              planejado para aulas expositivas, leituras orientadas e
-              atividades práticas.
+              <strong>Indicado para:</strong> cursos presenciais e EAD com
+              aulas gravadas, onde o aluno consome o conteúdo de forma
+              passiva, sem exigência de estudos complementares extensivos ou
+              atividades interativas complexas.
             </p>
             <p class="mb-0 small text-muted">
-              <strong>Fórmula:</strong> <code>CH = Aulas + Leituras + Atividades</code>
+              <strong>Fórmula:</strong>
+              <code>CH = Aulas + Leituras + Atividades</code>
             </p>
+          </div>
+        </div>
+
+        <div class="card border-info mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Como aplicar este modelo:</h5>
+          </div>
+          <div class="card-body">
+            <ol class="small text-muted mb-0">
+              <li>
+                Determine o tempo total das aulas e conteúdos expositivos.
+              </li>
+              <li>
+                Adicione o tempo estimado para leitura de materiais
+                complementares.
+              </li>
+              <li>
+                Inclua o tempo médio para realização de exercícios e testes
+                básicos.
+              </li>
+            </ol>
           </div>
         </div>
 
         <form id="calc-form">
           <div class="mb-3">
-            <label for="aulas" class="form-label">Tempo de Aulas (horas)</label>
-            <input type="number" step="0.1" min="0" class="form-control" id="aulas" placeholder="Ex.: 10" required />
+            <label for="aulas" class="form-label">Tempo de aulas <small>(em horas)</small></label>
+            <input type="number" step="0.1" min="0" class="form-control" id="aulas" placeholder="Horas" required />
           </div>
           <div class="mb-3">
-            <label for="leituras" class="form-label">Tempo de Leituras (horas)</label>
-            <input type="number" step="0.1" min="0" class="form-control" id="leituras" placeholder="Ex.: 4" required />
+            <label for="leituras" class="form-label">Tempo de leituras <small>(em horas)</small></label>
+            <input type="number" step="0.1" min="0" class="form-control" id="leituras" placeholder="Horas" required />
           </div>
           <div class="mb-3">
-            <label for="atividades" class="form-label">Tempo de Atividades (horas)</label>
-            <input type="number" step="0.1" min="0" class="form-control" id="atividades" placeholder="Ex.: 2"
-              required />
+            <label for="atividades" class="form-label">Tempo de atividades <small>(em horas)</small></label>
+            <input type="number" step="0.1" min="0" class="form-control" id="atividades" placeholder="Horas" required />
           </div>
           <button type="submit" class="btn btn-primary w-100">
             Calcular
@@ -69,13 +88,16 @@
         <div id="resultado" class="alert alert-info mt-4 d-none" role="alert"></div>
 
         <div class="card border-warning mt-4">
+          <div class="card-header">
+            <h5 class="mb-0">Limitações:</h5>
+          </div>
           <div class="card-body p-3">
             <p class="mb-0 small text-warning">
-              <strong>Limitações:</strong> Este modelo não considera tempos de
-              revisão, avaliações, fóruns de discussão, suporte tutoria ou
-              atividades síncronas adicionais. Use como estimativa inicial e
-              complemente com outros modelos para um planejamento mais
-              completo.
+              Este modelo não reflete o esforço cognitivo real do aluno. Ele
+              pode subestimar a carga horária necessária caso o curso exija
+              estudo independente, participação em fóruns ou atividades
+              práticas. Para cursos mais dinâmicos, pode ser necessário
+              combiná-lo com outros modelos.
             </p>
           </div>
         </div>
@@ -84,23 +106,29 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    document.getElementById("calc-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const aulas = parseFloat(document.getElementById("aulas").value) || 0;
-      const leituras = parseFloat(document.getElementById("leituras").value) || 0;
-      const atividades = parseFloat(document.getElementById("atividades").value) || 0;
+    document
+      .getElementById("calc-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const aulas = parseFloat(document.getElementById("aulas").value) || 0;
+        const leituras =
+          parseFloat(document.getElementById("leituras").value) || 0;
+        const atividades =
+          parseFloat(document.getElementById("atividades").value) || 0;
 
-      const total = aulas + leituras + atividades;
+        const total = aulas + leituras + atividades;
 
-      const resultadoDiv = document.getElementById("resultado");
-      resultadoDiv.classList.remove("d-none");
-      resultadoDiv.textContent = `Carga Horária Total: ${total.toLocaleString("pt-BR", {
-        minimumFractionDigits: 1,
-        maximumFractionDigits: 1,
-      })} horas`;
-    });
+        const resultadoDiv = document.getElementById("resultado");
+        resultadoDiv.classList.remove("d-none");
+        resultadoDiv.textContent = `Carga Horária Total: ${total.toLocaleString(
+          "pt-BR",
+          {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1,
+          }
+        )} horas`;
+      });
   </script>
 </body>
 
