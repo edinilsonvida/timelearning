@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Calculadora de Carga Horária</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="./css/estilos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-start p-3 border-bottom">
+      <a href="index.html" class="btn btn-outline-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left-long"></i> Voltar para a Página
+        Inicial
+      </a>
+    </div>
+
+    <div class="card shadow card-main">
+      <div class="card-header text-center">
+        <h4 class="mb-0">FAQ - Perguntas Frequentes</h4>
+        <small class="text-muted">TimeLearning - Otimizador de Tempo de Aprendizagem</small>
+      </div>
+      <div class="card-body">
+        <div class="search-box">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" id="searchInput" placeholder="Digite sua dúvida para buscar..." />
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-book-open-reader"></i> Conceitos Básicos
+        </div>
+
+        <div class="faq-item" data-keywords="carga horaria definicao conceito">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            O que é carga horária e por que é importante calculá-la
+            corretamente?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A carga horária representa o tempo total que um aluno precisa
+              dedicar para completar um curso com sucesso, incluindo aulas,
+              estudos, atividades e avaliações. Calcular corretamente é
+              fundamental para:
+            </p>
+            <ul>
+              <li>
+                Cumprir exigências legais e regulamentares.
+              </li>
+              <li>
+                Fornecer expectativas realistas aos alunos.
+              </li>
+              <li>Garantir qualidade pedagógica.</li>
+              <li>Facilitar o planejamento acadêmico.</li>
+              <li>
+                Permitir comparação entre cursos similares.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="modelo escolher qual usar">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como escolher o modelo mais adequado para meu curso?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>A escolha do modelo depende das características do seu curso. Considere os seguintes perfis:</p>
+            <ul>
+              <li>
+                <strong>Modelo 1 (Tempo de Exposição):</strong> indicado para cursos básicos, com aulas expositivas e atividades simples.
+              </li>
+              <li>
+                <strong>Modelo 2 (Esforço Cognitivo):</strong> adequado para cursos intermediários ou avançados, com atividades que exigem reflexão e análise.
+              </li>
+              <li>
+                <strong>Modelo 3 (Tempo de Esforço):</strong> recomendado para cursos que demandam estudo autônomo intenso e aprofundamento teórico.
+              </li>
+              <li>
+                <strong>Modelo 4 (Design de Aprendizagem):</strong> ideal para cursos com metodologias diversificadas, como gamificação, mentoria e aprendizagem ativa.
+              </li>
+              <li>
+                <strong>Modelo 5 (Microlearning):</strong> voltado para cursos modulares, com conteúdos curtos, objetivos e distribuídos em pequenas unidades.
+              </li>
+              <li>
+                <strong>Modelo 6 (Múltiplos Fatores):</strong> aplicável a cursos complexos que combinam diferentes estratégias de ensino e avaliação.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="diferenca modelos comparacao">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Qual a principal diferença entre os modelos disponíveis?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Os modelos diferem na forma como consideram o esforço do aluno:</p>
+            <ul>
+              <li>
+                <strong>Modelos 1 e 5:</strong> focam no tempo direto de exposição ao conteúdo.
+              </li>
+              <li>
+                <strong>Modelos 2, 3 e 4:</strong> aplicam multiplicadores baseados no esforço cognitivo necessário.
+              </li>
+              <li>
+                <strong>Modelo 6:</strong> considera múltiplas dimensões simultaneamente, como exposição, metodologia, interação, cognição e aplicação.
+              </li>
+            </ul>
+            <p>Quanto mais complexo o curso e maior a exigência de participação ativa do aluno, maior será a diferença entre os resultados dos modelos.</p>
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-gears"></i> Uso Prático da Calculadora
+        </div>
+
+        <div class="faq-item" data-keywords="preencher campos dados informacoes">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como devo preencher os campos de tempo nas calculadoras?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>O preenchimento deve levar em consideração:</p>
+            <ul>
+              <li>
+                <strong>Para aulas/videoaulas:</strong> conte apenas o tempo efetivo de conteúdo, sem pausas ou intervalos.
+              </li>
+              <li>
+                <strong>Para leituras:</strong> estime o tempo com base na quantidade de páginas ou palavras. Use como referência 200-250 palavras por minuto para textos técnicos.
+              </li>
+              <li>
+                <strong>Para atividades:</strong> considere apenas o tempo de execução da tarefa, não o de correção. Avalie de acordo com a complexidade.
+              </li>
+              <li>
+                <strong>Para projetos:</strong> inclua o tempo necessário para pesquisa, desenvolvimento, revisão e apresentação.
+              </li>
+            </ul>
+            <p><em>Dica:</em> use números decimais (exemplo: 2,5 horas) para maior precisão. As tooltips (dicas) em cada campo fornecem orientações específicas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="tempo leitura calcular estimar">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como calcular o tempo de leitura de materiais?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Use estas referências para estimar o tempo de leitura:</p>
+            <ul>
+              <li><strong>Textos simples:</strong> 250-300 palavras por minuto.</li>
+              <li><strong>Textos técnicos:</strong> 200-250 palavras por minuto.</li>
+              <li><strong>Textos científicos/acadêmicos:</strong> 150-200 palavras por minuto.</li>
+              <li><strong>Textos em idioma estrangeiro:</strong> 100-150 palavras por minuto.</li>
+            </ul>
+            <p><strong>Exemplo prático:</strong> um artigo de 2.000 palavras técnicas levará aproximadamente 8 a 10 minutos para ser lido (2.000 ÷ 250 = 8 min). Considere também tempo adicional para compreensão e anotações.</p>
+            <p><b>Referências:</b></p>
+            <ul>
+              <li>CARVER, R. P. <strong>Reading rate:</strong> a review of research and theory. New York: Academic Press, 1990.</li>
+              <li>HOLMQVIST, Kenneth; NYSTRÖM, Marcus; ANDERSSON, Richard; DEWHURST, Richard; JARODZKA, Halszka; VAN DE WEIJER, Joost. <strong>Eye tracking:</strong> a comprehensive guide to methods and measures. Oxford: Oxford University Press, 2011.</li>
+              <li>NIELSEN, Jakob; PERNICE, Kara; WHITENTON, Kathryn. <strong>How people read on the web:</strong> the eyetracking evidence. Fremont, CA: Nielsen Norman Group, 2009. Disponível em: <https://www.nngroup.com/reports/how-people-read-web-eyetracking-evidence/>. Acesso em: 1 jul. 2025.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="fatores pesos multiplicadores">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            O que significam os fatores e pesos nos diferentes modelos?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Os fatores e pesos são multiplicadores que refletem o esforço cognitivo necessário:</p>
+            <ul>
+              <li><strong>Peso 1.0:</strong> exposição passiva (aulas expositivas).</li>
+              <li><strong>Peso 1.5:</strong> leitura com compreensão.</li>
+              <li><strong>Peso 2.0:</strong> atividades que exigem aplicação.</li>
+              <li><strong>Peso 2.5-3.0:</strong> projetos e análise crítica.</li>
+              <li><strong>Peso 3.5+:</strong> criação, inovação e mentoria.</li>
+            </ul>
+            <p><em>Exemplo:</em> 1 hora de projeto (peso 3) equivale a 3 horas de aula expositiva em termos de dedicação do aluno.</p>
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-bullseye"></i> Aplicação por Tipo de Curso
+        </div>
+
+        <div class="faq-item" data-keywords="curso basico iniciante modelo">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Qual modelo usar para cursos básicos/introdutórios?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Para cursos básicos, recomendamos:</p>
+            <ul>
+              <li>
+                <strong>Primeira opção:</strong> Modelo 1 (Tempo de Exposição) - ideal para cursos com conteúdo predominantemente expositivo.
+              </li>
+              <li>
+                <strong>Segunda opção:</strong> Modelo 3 (Tempo de Esforço) com fator 1.5 - indicado quando há necessidade de estudo complementar básico.
+              </li>
+            </ul>
+            <p><strong>Características dos cursos básicos:</strong></p>
+            <ul>
+              <li>Conteúdo introdutório.</li>
+              <li>Atividades simples (questionários, exercícios diretos).</li>
+              <li>Pouca exigência de pesquisa ou análise crítica.</li>
+              <li>Foco na transmissão de informações fundamentais.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="curso avancado especialização pos">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como calcular carga horária para cursos avançados ou
+            especializações?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Para cursos avançados, considere:</p>
+            <ul>
+              <li>
+                <strong>Modelo 2 (Esforço Cognitivo):</strong> quando há projetos e atividades complexas bem definidas.
+              </li>
+              <li>
+                <strong>Modelo 3 (Tempo de Esforço):</strong> com fator 3.0 para cursos que exigem muito estudo autônomo.
+              </li>
+              <li>
+                <strong>Modelo 6 (Múltiplos Fatores):</strong> indicado para especializações que combinam diferentes metodologias.
+              </li>
+            </ul>
+            <p>Características a considerar:</p>
+            <ul>
+              <li>Necessidade de pesquisa independente.</li>
+              <li>Análise crítica e síntese.</li>
+              <li>Projetos aplicados ao contexto profissional.</li>
+              <li>Interação com especialistas e mentores.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="microlearning cursos curtos modulos">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como usar o Modelo 5 para microlearning?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>O Modelo 5 é específico para cursos modulares com as seguintes características:</p>
+            <ul>
+              <li><strong>Conteúdos curtos:</strong> 3 a 15 minutos por módulo.</li>
+              <li><strong>Atividades rápidas:</strong> quizzes, exercícios práticos imediatos.</li>
+              <li><strong>Revisão frequente:</strong> conteúdo revisitado regularmente.</li>
+            </ul>
+            <p>Fatores de revisão:</p>
+            <ul>
+              <li><strong>1.1-1.2:</strong> conteúdos simples, pouca necessidade de reforço.</li>
+              <li><strong>1.3-1.4:</strong> conteúdos que precisam de reforço moderado.</li>
+              <li><strong>1.5:</strong> conteúdos complexos que exigem revisão intensiva.</li>
+            </ul>
+            <p><em>Lembre-se:</em> informe os tempos em minutos, não em horas.</p>
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-triangle-exclamation"></i> Limitações e
+          Cuidados
+        </div>
+
+        <div class="faq-item" data-keywords="limitacoes problemas cuidados">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Quais são as principais limitações dos modelos?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Cada modelo tem limitações específicas:</p>
+            <ul>
+              <li><strong>Modelo 1:</strong> pode subestimar cursos que exigem estudo independente.</li>
+              <li><strong>Modelo 2:</strong> pode superestimar se o esforço cognitivo for menor que o esperado.</li>
+              <li><strong>Modelo 3:</strong> depende do aluno seguir as recomendações de estudo autônomo.</li>
+              <li><strong>Modelo 4:</strong> requer planejamento detalhado das metodologias.</li>
+              <li><strong>Modelo 5:</strong> não é adequado para cursos extensivos ou complexos.</li>
+              <li><strong>Modelo 6:</strong> complexo de aplicar, requer análise cuidadosa dos pesos.</li>
+            </ul>
+            <p><em>Recomendação:</em> considere usar mais de um modelo para validação cruzada.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="erro comum evitar problemas">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Quais erros devo evitar ao usar as calculadoras?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Erros comuns a evitar:</strong></p>
+            <ul>
+              <li><strong>Incluir tempo de correção:</strong> conte apenas o tempo do aluno, não o do professor.</li>
+              <li><strong>Misturar unidades:</strong> atenção às unidades (horas vs. minutos) em cada modelo.</li>
+              <li><strong>Superestimar atividades simples:</strong> questionários básicos não precisam de pesos altos.</li>
+              <li><strong>Ignorar o perfil do aluno:</strong> considere o nível de conhecimento prévio.</li>
+              <li><strong>Usar modelo inadequado:</strong> cada modelo tem seu contexto ideal de aplicação.</li>
+              <li><strong>Não considerar tecnologia:</strong> ferramentas podem acelerar ou retardar o aprendizado.</li>
+            </ul>
+            <p><em>Dica:</em> sempre valide os resultados com a experiência prática de cursos similares.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="validar resultado conferir">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como validar se o resultado da calculadora está correto?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Estratégias de validação:</strong></p>
+            <ul>
+              <li><strong>Compare com cursos similares:</strong> verifique a carga horária de cursos do mesmo nível e área.</li>
+              <li><strong>Use múltiplos modelos:</strong> aplique 2-3 modelos diferentes e compare os resultados.</li>
+              <li><strong>Teste com grupo piloto:</strong> acompanhe o tempo real gasto por alguns alunos.</li>
+              <li><strong>Consulte especialistas:</strong> peça opinião de colegas experientes na área.</li>
+              <li><strong>Considere feedback dos alunos:</strong> após o curso, pergunte se a carga horária foi adequada.</li>
+            </ul>
+            <p>Sinais de alerta:</strong></p>
+            <ul>
+              <li>Resultado muito diferente de cursos similares.</li>
+              <li>Carga horária desproporcional ao conteúdo.</li>
+              <li>Feedback negativo consistente dos alunos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-clipboard-list"></i> Aspectos Regulamentares
+        </div>
+
+        <div class="faq-item" data-keywords="mec regulamentacao legal exigencias">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Existem exigências legais para cálculo de carga horária?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sim, existem regulamentações importantes:</p>
+            <ul>
+              <li><strong>Para cursos superiores:</strong> seguir diretrizes do MEC e as Diretrizes Curriculares Nacionais (DCNs).</li>
+              <li><strong>Para cursos técnicos:</strong> atender ao Catálogo Nacional de Cursos Técnicos.</li>
+              <li><strong>Para cursos livres:</strong> não há exigência legal específica, mas é uma boa prática ser transparente quanto à carga horária.</li>
+              <li><strong>Para EAD:</strong> o Decreto nº 12.456/2025 - Nova Política de EAD estabelece critérios específicos para cursos a distância.</li>
+            </ul>
+            <p>Documentação necessária:</p>
+            <ul>
+              <li>Justificativa da metodologia de cálculo.</li>
+              <li>Detalhamento das atividades.</li>
+              <li>Evidências de tempo necessário.</li>
+            </ul>
+            <p><em>Importante:</em> Consulte sempre a legislação atual e os órgãos reguladores específicos da sua área.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="certificacao diploma horas">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            A carga horária calculada pode ser usada em certificados?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Depende do tipo de curso:</p>
+            <ul>
+              <li><strong>Cursos livres:</strong> sim, podem ser emitidos certificados com a carga horária calculada.</li>
+              <li><strong>Cursos técnicos/superiores:</strong> deve seguir a carga horária aprovada pelas normas institucionais.</li>
+              <li><strong>Cursos de extensão:</strong> geralmente são aceitos, mas é importante verificar as normas da instituição.</li>
+            </ul>
+            <p>Boas práticas para certificação:</p>
+            <ul>
+              <li>Seja transparente sobre a metodologia de cálculo.</li>
+              <li>Mantenha registros das atividades realizadas.</li>
+              <li>Documente a participação efetiva do aluno.</li>
+              <li>Considere avaliações para validar o aprendizado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="category-header">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Dicas Avançadas
+        </div>
+
+        <div class="faq-item" data-keywords="combinar modelos usar juntos">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Posso combinar diferentes modelos para um mesmo curso?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sim, e é uma prática recomendada. Estratégias de combinação:</p>
+            <ul>
+              <li><strong>Validação cruzada:</strong> use 2-3 modelos e compare os resultados.</li>
+              <li><strong>Módulos diferentes:</strong> aplique modelos específicos para cada módulo do curso.</li>
+              <li><strong>Média ponderada:</strong> calcule a média dos resultados, dando mais peso ao modelo mais adequado.</li>
+            </ul>
+            <p>Exemplo prático:</p>
+            <ul>
+              <li><strong>Módulo teórico:</strong> Modelo 1 (Tempo de Exposição).</li>
+              <li><strong>Módulo prático:</strong> Modelo 4 (Design de Aprendizagem).</li>
+              <li><strong>Projeto final:</strong> Modelo 2 (Esforço Cognitivo).</li>
+            </ul>
+            <p><em>Vantagem:</em> maior precisão e adequação às diferentes fases do curso.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="ajustar personalizar adaptar">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como adaptar os cálculos para diferentes perfis de alunos?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Considere estes fatores de ajuste para o nível de conhecimento prévio:</p>
+            <ul>
+              <li><strong>Iniciantes:</strong> acrescente de 20-30% ao tempo.</li>
+              <li><strong>Intermediários:</strong> mantenha o tempo padrão.</li>
+              <li><strong>Avançados:</strong> reduza de 10-20% do tempo.</li>
+            </ul>
+            <p>A modalidade de ensino:</p>
+            <ul>
+              <li><strong>EAD:</strong> adicione de 15-25% ao tempo estimado.</li>
+              <li><strong>Híbrido:</strong> sem ajustes.</li>
+              <li><strong>Presencial:</strong> reduza de 10-15% do tempo.</li>
+            </ul>
+            <p>A faixa etária:</p>
+            <ul>
+              <li><strong>Jovens (18-25):</strong> sem ajustes.</li>
+              <li><strong>Adultos (26-45):</strong> acrescente de 10-15%.</li>
+              <li><strong>Maduros (45+):</strong> acrescente de 20-30%.</li>
+            </ul>
+            <p><em>Dica:</em> crie versões da carga horária para diferentes perfis quando necessário.</p>
+            <p><strong>Referências:</strong></p>
+            <ul>
+              <li>ASSOCIATION FOR TALENT DEVELOPMENT (ATD). <strong>Instructional design now:</strong> a new age of learning and beyond. Alexandria, VA: ATD Press, 2015.</li>
+              <li>FILATRO, Andrea. <strong>Como preparar conteúdos para EAD</strong>. São Paulo: Pearson Education do Brasil, 2008.</li>
+              <li>GAGNÉ, Robert M.; BRIGGS, Leslie J.; WAGER, Walter W. <strong>Principles of instructional design</strong>. 4. ed. Fort Worth: Harcourt Brace Jovanovich College Publishers, 1992.</li>
+              <li>KAPP, Karl M.; DEFELICE, Robyn A. <strong>Time to develop one hour of training</strong>. TD Magazine - Newsletter, 6 dez. 2017. Disponível em: <https://www.td.org/content/newsletter/time-to-develop-one-hour-of-training-2009>. Acesso em: 10 jan. 2022.</li>
+              <li>MERRIAM, Sharan B.; BIEREMA, Laura L. <strong>Adult learning:</strong> linking theory and practice. San Francisco: Jossey-Bass, 2014.</li>
+              <li>SWELLER, John. <strong>Cognitive load during problem solving:</strong> effects on learning. Cognitive Science, v. 12, n. 2, p. 257-285, 1988.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-keywords="tecnologia ferramentas impacto">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            Como as ferramentas tecnológicas afetam o cálculo da carga
+            horária?
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Tecnologias que reduzem o tempo de aprendizagem:</p>
+            <ul>
+              <li>Simuladores e laboratórios virtuais.</li>
+              <li>Ferramentas de busca e pesquisa avançada.</li>
+              <li>Sistemas de correção automática.</li>
+              <li>Plataformas colaborativas eficientes.</li>
+            </ul>
+            <p>Tecnologias que podem aumentar o tempo:</p>
+            <ul>
+              <li>Ferramentas complexas que exigem aprendizado prévio.</li>
+              <li>Sistemas instáveis ou com lentidão.</li>
+              <li>Interfaces pouco intuitivas.</li>
+              <li>Problemas frequentes de conectividade.</li>
+            </ul>
+            <p>Recomendações:</p>
+            <ul>
+              <li>Teste as ferramentas antes de calcular a carga horária.</li>
+              <li>Considere o tempo de adaptação tecnológica dos alunos.</li>
+              <li>Inclua suporte técnico quando necessário.</li>
+              <li>Monitore o desempenho real das ferramentas em uso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

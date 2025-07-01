@@ -6,34 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora de Carga Horária - Modelo 5</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #f8f9fa;
-    }
-
-    .card-main {
-      max-width: 650px;
-      margin: 2rem auto;
-    }
-
-    label small {
-      font-weight: 400;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="../css/estilos.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="container">
     <div class="d-flex justify-content-start p-3 border-bottom">
       <a href="../index.html" class="btn btn-outline-secondary btn-sm">
-        ← Voltar para a Página Inicial
+        <i class="fa-solid fa-arrow-left-long"></i> Voltar para a Página Inicial
       </a>
     </div>
     <div class="card shadow card-main">
       <div class="card-header text-center">
         <h4 class="mb-0">Modelo 5: Microlearning</h4>
-        <small class="text-muted">Carga Horária Total = (Duração dos Conteúdos + Tempo das Atividades) × Fator de
-          Revisão</small>
       </div>
       <div class="card-body">
         <div class="card border-secondary mb-4">
@@ -52,7 +38,7 @@
           </div>
         </div>
 
-        <div class="card border-info mb-4">
+        <div class="card mb-4">
           <div class="card-header">
             <h5 class="mb-0">Como aplicar este modelo:</h5>
           </div>
@@ -68,16 +54,28 @@
         <form id="calc-form">
           <div class="row g-3 mb-3">
             <div class="col-md-6">
-
-              <label for="conteudo" class="form-label">Duração total dos conteúdos
-                <small>(em minutos)</small></label>
-              <input type="number" step="0.1" min="0" class="form-control" id="conteudo" placeholder="Minutos"
-                required />
+              <label for="conteudo" class="form-label">
+                Duração total dos conteúdos <small>(em minutos)</small>
+                <div class="tooltip-container">
+                  <span class="tooltip-icon">?</span>
+                  <div class="tooltip-content">
+                    Soma de todos os micro-conteúdos: vídeos curtos, podcasts, infográficos, textos breves, etc. No microlearning, cada unidade deve ter entre 3-15 minutos. Informe o total em minutos.
+                  </div>
+                </div>
+              </label>
+              <input type="number" step="0.1" min="0" class="form-control" id="conteudo" placeholder="Ex: 180" required />
             </div>
             <div class="col-md-6">
-              <label for="atividade" class="form-label">Tempo total das atividades <small>(em minutos)</small></label>
-              <input type="number" step="0.1" min="0" class="form-control" id="atividade" placeholder="Minutos"
-                required />
+              <label for="atividade" class="form-label">
+                Tempo total das atividades <small>(em minutos)</small>
+                <div class="tooltip-container">
+                  <span class="tooltip-icon">?</span>
+                  <div class="tooltip-content">
+                    Tempo para atividades rápidas como quizzes, exercícios práticos curtos, reflexões e aplicações imediatas. Cada atividade deve ser concluída em poucos minutos.
+                  </div>
+                </div>
+              </label>
+              <input type="number" step="0.1" min="0" class="form-control" id="atividade" placeholder="Ex: 120" required />
             </div>
           </div>
 
@@ -87,7 +85,15 @@
               revisão, que pode variar entre 1.1 e 1.5, dependendo da necessidade de reforço e absorção do
               conhecimento.
             </p>
-            <label for="fator" class="form-label">Fator de revisão</label>
+            <label for="fator" class="form-label">
+              Fator de revisão
+              <div class="tooltip-container">
+                <span class="tooltip-icon">?</span>
+                <div class="tooltip-content">
+                  Escolha baseado na necessidade de reforço: 1.1-1.2 para conteúdos simples com pouca revisão, 1.3-1.4 para conteúdos que precisam de reforço moderado, 1.5 para conteúdos complexos que exigem revisão intensiva.
+                </div>
+              </div>
+            </label>
             <select class="form-select" id="fator" required>
               <option value="1.1">1.1 (revisão leve)</option>
               <option value="1.2">1.2</option>
@@ -98,18 +104,18 @@
           </div>
 
           <button type="submit" class="btn btn-primary w-100">
-            Calcular
+            <i class="fa-solid fa-calculator"></i> Calcular
           </button>
         </form>
 
         <div id="resultado" class="alert alert-info mt-4 d-none" role="alert"></div>
 
-        <div class="card border-warning mt-4">
+        <div class="card mt-4">
           <div class="card-header">
             <h5 class="mb-0">Limitações:</h5>
           </div>
           <div class="card-body p-3">
-            <p class="mb-0 small text-warning">
+            <p class="mb-0 small">
               Este modelo não é adequado para cursos extensivos ou de alta complexidade, pois o
               microlearning foca na absorção rápida de pequenos conteúdos. Para cursos que exigem reflexão
               profunda e aplicação prática, recomenda-se combiná-lo com modelos que consideram o esforço
