@@ -1,4 +1,4 @@
-# ⏱️ TimeLearning – Otimizador de Tempo de Aprendizagem
+# ⏱️ TimeLearning - Otimizador de Tempo de Aprendizagem
 
 O **TimeLearning** é uma calculadora desenvolvida pela **Equipe Multidisciplinar do NEAD do IFSC - Câmpus Lages** com o objetivo de otimizar o planejamento da carga horária em Unidades Curriculares (UCs) presenciais, híbridas ou totalmente online. A ferramenta oferece **seis modelos independentes de cálculo**, com base em metodologias reconhecidas no contexto da Educação a Distância e presencial.
 
